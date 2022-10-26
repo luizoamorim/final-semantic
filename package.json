@@ -11,7 +11,7 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "prepare": "husky install",
         "pre": "npx prettier --write . && npx eslint --fix",
-        "semantic-release": "GH_TOKEN=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 semantic-release --no-ci"
+        "semantic-release": "semantic-release"
     },
     "author": "luizoamorim",
     "license": "ISC",
