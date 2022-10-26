@@ -3,6 +3,10 @@
     "version": "1.0.0",
     "description": "",
     "main": "index.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/luizoamorim/final-semantic.git"
+    },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "prepare": "husky install",
@@ -13,6 +17,8 @@
     "devDependencies": {
         "@commitlint/cli": "^17.1.2",
         "@commitlint/config-conventional": "^17.1.0",
+        "@semantic-release/changelog": "^6.0.1",
+        "@semantic-release/git": "^10.0.1",
         "@typescript-eslint/eslint-plugin": "^5.41.0",
         "@typescript-eslint/parser": "^5.41.0",
         "commitizen": "^4.2.5",
@@ -29,5 +35,15 @@
         "commitizen": {
             "path": "./node_modules/cz-conventional-changelog"
         }
+    },
+    "release": {
+        "plugins": [
+            "@semantic-release/commit-analyzer",
+            "@semantic-release/release-notes-generator",
+            "@semantic-release/npm",
+            "@semantic-release/github",
+            "@semantic-release/git",
+            "@semantic-release/changelog"
+        ]
     }
 }
