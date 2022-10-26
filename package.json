@@ -10,7 +10,8 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "prepare": "husky install",
-        "pre": "npx prettier --write . && npx eslint --fix"
+        "pre": "npx prettier --write . && npx eslint --fix",
+        "semantic-release": "npm run pre && GH_TOKEN=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 semantic-release --no-ci"
     },
     "author": "luizoamorim",
     "license": "ISC",
@@ -37,6 +38,20 @@
         }
     },
     "release": {
+        "branches": [
+            "+([0-9])?(.{+([0-9]),x}).x",
+            "master",
+            "next",
+            "next-major",
+            {
+                "name": "beta",
+                "prerelease": true
+            },
+            {
+                "name": "alpha",
+                "prerelease": true
+            }
+        ],
         "plugins": [
             "@semantic-release/commit-analyzer",
             "@semantic-release/release-notes-generator",
@@ -44,6 +59,8 @@
             "@semantic-release/github",
             "@semantic-release/git",
             "@semantic-release/changelog"
-        ]
+        ],
+        "repositoryUrl": "https://github.com/luizoamorim/final-semantic.git",
+        "tagFormat": "v${version}"
     }
 }
